@@ -12,6 +12,19 @@
 			<h2>See all your finances in one </h2>
 			<h2>place & create a budget</h2>
 			<br>
+		<%= form_tag "/users", method: "post" do %>
+			<%= label_tag :username, "Username" %>
+			<%= text_field_tag :username, nil, class: "text" %>
+			<br><br>
+			<%= label_tag :email, "e-mail" %>
+			<%= email_field_tag :email, nil, class: "text" %>
+			<br><br>
+			<%= label_tag :password, "Password" %>
+			<%= password_field_tag :password, nil, class: "text" %>
+			<br><br>
+			<%= submit_tag "SIGN UP", class: "button" %>
+		<% end %>
+		<!--
 		<form action="/users" method="post" accept-charset="UTF-8">
 			<label>Username</label>
 			<input class="text" type="text" name="user[username]" required><br>
@@ -26,13 +39,14 @@
 			<label>Confirm password</label>
 			<input class="text" type="Password" name="user[password]"><br>
 			<br>
-			-->
+			
 			<input id="checkbox" type="checkbox" name="remember" value="true" style="display: block; float: left">
 			<label style="display: inline" id="check">Remember me</label>
 			<input type="hidden" name="authenticity_token" 
 					value="<%= form_authenticity_token %>">
 			<button type="submit" name="submit">SIGN UP</button>
 		</form>
+		-->
 	</article>
 	<aside><div id="aside">
 		<h4 id="aside-header">Why you'll love it</h4>

@@ -8,7 +8,8 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.new(user_params)
+#		@user = User.new(user_params)
+@user = User.new(username: params[:username], email: params[:email], password: params[:password])
 		if @user.save
 			flash[:success]
 			redirect_to root_path
